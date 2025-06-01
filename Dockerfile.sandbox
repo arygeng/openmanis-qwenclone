@@ -1,0 +1,51 @@
+# Manus AI Clone - Code Execution Sandbox Dockerfile
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /sandbox
+
+# Install minimal system dependencies for code execution
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    wget \
+    build-essential \
+    nodejs \
+    npm \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install common Python packages for code execution
+RUN pip install --no-cache-dir \
+    requests \
+    beautifulsoup4 \
+    pandas \
+    numpy \
+    matplotlib \
+    seaborn \
+    jupyter \
+    ipython
+
+# Install Node.js packages
+RUN npm install -g \
+    typescript \
+    ts-node \
+    nodemon
+
+# Create sandbox user (non-root for security)
+RUN useradd -m -s /bin/bash sandbox_user
+
+# Create workspace directory
+RUN mkdir -p /sandbox/workspace && chown sandbox_user:sandbox_user /sandbox/workspace
+
+# Set environment variables
+ENV PYTHONPATH=/sandbox
+ENV NODE_PATH=/usr/local/lib/node_modules
+
+# Switch to sandbox user
+USER sandbox_user
+
+# Set working directory to workspace
+WORKDIR /sandbox/workspace
+
+# Default command (can be overridden)
+CMD ["python", "-c", "print('Sandbox ready for code execution')"]

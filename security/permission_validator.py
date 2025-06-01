@@ -8,42 +8,8 @@ from datetime import datetime
 from enum import Enum
 from typing import Dict, Any, List, Optional, Union
 
-class PermissionLevel(Enum):
-    """Permission levels with numeric values"""
-    NONE = 0
-    READ = 1
-    WRITE = 2
-    EXECUTE = 3
-    ADMIN = 4
-
-
-class AccessRule:
-    """
-    Security access rule definition
-    """
-    def __init__(self, 
-                 rule_id: str,
-                 description: str,
-                 resource_type: str,
-                 required_permission: PermissionLevel,
-                 conditions: Optional[Dict[str, Any]] = None):
-        self.rule_id = rule_id
-        self.description = description
-        self.resource_type = resource_type
-        self.required_permission = required_permission
-        self.conditions = conditions or {}
-        self.created_at = datetime.now().isoformat()
-
-    def to_dict(self) -> Dict[str, Any]:
-        """Convert rule to dictionary representation"""
-        return {
-            "rule_id": self.rule_id,
-            "description": self.description,
-            "resource_type": self.resource_type,
-            "required_permission": self.required_permission.value,
-            "conditions": self.conditions,
-            "created_at": self.created_at
-        }
+from core.types import PermissionLevel
+from security.access_rule import AccessRule
 
 
 class RolePermissions:

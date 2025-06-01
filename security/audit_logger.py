@@ -373,7 +373,7 @@ class AuditLogger:
                 
         # Remove old entries
         if old_count > 0:
-        self.audit_log = self.audit_log[old_count:]
+            self.audit_log = self.audit_log[old_count:]
         
         return old_count
 

@@ -1,0 +1,106 @@
+version: '3.8'
+
+services:
+  # Main Manus AI Clone Application
+  manus-ai-clone:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "12000:12000"  # Web interface
+      - "12001:12001"  # API server (if needed)
+    environment:
+      - FLASK_ENV=production
+      - PYTHONPATH=/app
+      - MANUS_AI_PORT=12000
+      - MANUS_AI_HOST=0.0.0.0
+    volumes:
+      - ./data:/app/data  # Persistent data storage
+      - ./logs:/app/logs  # Log files
+      - /var/run/docker.sock:/var/run/docker.sock  # Docker socket for sandbox execution
+    networks:
+      - manus-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:12000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Redis for session management and caching (optional)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - manus-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # PostgreSQL for persistent data storage (optional)
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: manus_ai_clone
+      POSTGRES_USER: manus_user
+      POSTGRES_PASSWORD: manus_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - manus-network
+    restart: unless-stopped
+
+  # Nginx reverse proxy (optional, for production)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl  # SSL certificates
+    depends_on:
+      - manus-ai-clone
+    networks:
+      - manus-network
+    restart: unless-stopped
+
+  # Code execution sandbox (isolated container)
+  code-sandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile.sandbox
+    environment:
+      - SANDBOX_MODE=true
+      - PYTHONPATH=/sandbox
+    volumes:
+      - sandbox_workspace:/sandbox/workspace
+      - /tmp:/tmp  # Temporary file sharing
+    networks:
+      - manus-network
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETUID
+      - SETGID
+    read_only: true
+    tmpfs:
+      - /tmp:noexec,nosuid,size=100m
+
+networks:
+  manus-network:
+    driver: bridge
+
+volumes:
+  redis_data:
+  postgres_data:
+  sandbox_workspace:

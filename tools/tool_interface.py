@@ -8,8 +8,8 @@ from datetime import datetime
 from enum import Enum
 from typing import Dict, Any, List, Optional, Union, Callable
 
-from core.engine import SecurityException
-from security.permission_validator import SecurityContext, PermissionLevel
+from core.types import SecurityException, PermissionLevel
+from security.permission_validator import SecurityContext
 
 class ToolType(Enum):
     """Types of available tools"""

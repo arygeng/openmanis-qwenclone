@@ -8,7 +8,7 @@ from datetime import datetime
 from typing import Dict, Any, List, Optional, Union, Callable
 
 from system_integration.component_connector import ComponentConnector, DataFlow
-from core.engine import SecurityException, PermissionLevel
+from core.types import SecurityException, PermissionLevel
 from security.permission_validator import SecurityContext, PermissionValidator
 
 class MessageRouter:

@@ -7,7 +7,7 @@ import uuid
 from datetime import datetime
 from typing import Dict, Any, List, Optional, Union, Callable
 
-from core.engine import ManusAIEngine, SecurityException
+from core.types import SecurityException
 from planner.task_prioritization import TaskPrioritizer
 from planner.task_planner import TaskPlanner
 from tools.tool_interface import ToolAdapter

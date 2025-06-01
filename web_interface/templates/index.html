@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manus AI Clone - Agent Interface</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .chat-container {
+            height: calc(100vh - 200px);
+        }
+        .message-bubble {
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .ai-message {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .status-idle { background-color: #10b981; }
+        .status-processing { background-color: #f59e0b; animation: pulse 2s infinite; }
+        .status-error { background-color: #ef4444; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .event-stream {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            background: #1f2937;
+            color: #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .tool-execution {
+            background: #f3f4f6;
+            border-left: 4px solid #3b82f6;
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-robot text-2xl text-blue-600 mr-3"></i>
+                    <h1 class="text-2xl font-bold text-gray-900">Manus AI Clone</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <span class="status-indicator status-idle" id="statusIndicator"></span>
+                        <span class="text-sm text-gray-600" id="statusText">Idle</span>
+                    </div>
+                    <button id="clearChat" class="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded-md">
+                        <i class="fas fa-trash mr-1"></i> Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Main Chat Area -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <!-- Chat Messages -->
+                    <div class="chat-container overflow-y-auto p-4 space-y-4" id="chatMessages">
+                        <div class="text-center text-gray-500 py-8">
+                            <i class="fas fa-comments text-4xl mb-4"></i>
+                            <p>Welcome to Manus AI Clone!</p>
+                            <p class="text-sm">Start a conversation by typing a message below.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Input Area -->
+                    <div class="border-t p-4">
+                        <div class="flex space-x-3">
+                            <input 
+                                type="text" 
+                                id="messageInput" 
+                                placeholder="Type your message here..." 
+                                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                autocomplete="off"
+                            >
+                            <button 
+                                id="sendButton" 
+                                class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Agent Status -->
+                <div class="bg-white rounded-lg shadow-sm border p-4">
+                    <h3 class="text-lg font-semibold mb-3">Agent Status</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>State:</span>
+                            <span id="agentState" class="font-mono">IDLE</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Events:</span>
+                            <span id="eventCount" class="font-mono">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Actions:</span>
+                            <span id="actionCount" class="font-mono">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Language:</span>
+                            <span id="workingLanguage" class="font-mono">English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Task -->
+                <div class="bg-white rounded-lg shadow-sm border p-4">
+                    <h3 class="text-lg font-semibold mb-3">Current Task</h3>
+                    <div id="currentTask" class="text-sm text-gray-600">
+                        No active task
+                    </div>
+                </div>
+
+                <!-- Event Stream -->
+                <div class="bg-white rounded-lg shadow-sm border p-4">
+                    <h3 class="text-lg font-semibold mb-3">Event Stream</h3>
+                    <div class="event-stream" id="eventStream">
+                        <div class="text-gray-400">Event stream will appear here...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        // Initialize Socket.IO
+        const socket = io();
+        
+        // DOM elements
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const chatMessages = document.getElementById('chatMessages');
+        const statusIndicator = document.getElementById('statusIndicator');
+        const statusText = document.getElementById('statusText');
+        const clearChat = document.getElementById('clearChat');
+        const agentState = document.getElementById('agentState');
+        const eventCount = document.getElementById('eventCount');
+        const actionCount = document.getElementById('actionCount');
+        const workingLanguage = document.getElementById('workingLanguage');
+        const currentTask = document.getElementById('currentTask');
+        const eventStream = document.getElementById('eventStream');
+
+        // State
+        let isProcessing = false;
+
+        // Socket event handlers
+        socket.on('connect', function() {
+            updateStatus('idle', 'Connected');
+            addSystemMessage('Connected to Manus AI Clone');
+        });
+
+        socket.on('disconnect', function() {
+            updateStatus('error', 'Disconnected');
+            addSystemMessage('Disconnected from server');
+        });
+
+        socket.on('message_received', function(data) {
+            updateStatus('processing', 'Processing...');
+        });
+
+        socket.on('message_result', function(data) {
+            updateStatus('idle', 'Idle');
+            isProcessing = false;
+            sendButton.disabled = false;
+            
+            // Add AI response
+            addAIMessage(data.result);
+            
+            // Update status
+            requestStatusUpdate();
+        });
+
+        socket.on('status_update', function(data) {
+            updateAgentStatus(data.status);
+        });
+
+        socket.on('error', function(data) {
+            updateStatus('error', 'Error');
+            isProcessing = false;
+            sendButton.disabled = false;
+            addSystemMessage('Error: ' + data.error, 'error');
+        });
+
+        // UI functions
+        function updateStatus(type, text) {
+            statusIndicator.className = `status-indicator status-${type}`;
+            statusText.textContent = text;
+        }
+
+        function addUserMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex justify-end';
+            messageDiv.innerHTML = `
+                <div class="message-bubble user-message text-white px-4 py-2 rounded-lg">
+                    ${escapeHtml(message)}
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function addAIMessage(result) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex justify-start';
+            
+            let content = '';
+            if (result.success && result.result && result.result.result) {
+                const toolResult = result.result.result;
+                if (toolResult.type === 'notification') {
+                    content = toolResult.text;
+                } else {
+                    content = JSON.stringify(toolResult, null, 2);
+                }
+            } else {
+                content = JSON.stringify(result, null, 2);
+            }
+            
+            messageDiv.innerHTML = `
+                <div class="message-bubble ai-message text-white px-4 py-2 rounded-lg">
+                    <pre class="whitespace-pre-wrap">${escapeHtml(content)}</pre>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function addSystemMessage(message, type = 'info') {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex justify-center';
+            const bgColor = type === 'error' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800';
+            messageDiv.innerHTML = `
+                <div class="px-3 py-1 rounded-full text-sm ${bgColor}">
+                    ${escapeHtml(message)}
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function updateAgentStatus(status) {
+            agentState.textContent = status.state || 'UNKNOWN';
+            eventCount.textContent = status.event_stream_length || 0;
+            actionCount.textContent = status.execution_history_length || 0;
+            workingLanguage.textContent = status.working_language || 'English';
+            
+            if (status.current_task) {
+                currentTask.innerHTML = `
+                    <div class="font-medium">${escapeHtml(status.current_task.description || 'Unknown task')}</div>
+                    <div class="text-xs text-gray-500 mt-1">
+                        Status: ${status.current_task.completed ? 'Completed' : 'In Progress'}
+                    </div>
+                `;
+            } else {
+                currentTask.textContent = 'No active task';
+            }
+        }
+
+        function requestStatusUpdate() {
+            socket.emit('get_status');
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message || isProcessing) return;
+
+            isProcessing = true;
+            sendButton.disabled = true;
+            
+            addUserMessage(message);
+            messageInput.value = '';
+            
+            socket.emit('send_message', { message: message });
+        }
+
+        function clearChatMessages() {
+            chatMessages.innerHTML = `
+                <div class="text-center text-gray-500 py-8">
+                    <i class="fas fa-comments text-4xl mb-4"></i>
+                    <p>Chat cleared. Start a new conversation!</p>
+                </div>
+            `;
+        }
+
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Event listeners
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        clearChat.addEventListener('click', clearChatMessages);
+
+        // Initialize
+        requestStatusUpdate();
+        setInterval(requestStatusUpdate, 5000); // Update status every 5 seconds
+    </script>
+</body>
+</html>

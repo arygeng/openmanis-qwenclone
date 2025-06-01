@@ -7,7 +7,7 @@ import logging
 from enum import Enum
 from typing import Dict, Any, List, Optional
 
-from core.engine import AgentState
+from core.types import AgentState
 
 class EventType(Enum):
     """System event types"""
