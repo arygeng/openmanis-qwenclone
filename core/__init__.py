@@ -1,15 +1,8 @@
-"""
-Core module initialization for Manus AI Clone
-Exports main classes for external use
-"""
-
-# Core module initialization
-from .engine import ManusAIEngine
-from .message_router import MessageRouter
-from .event_processor import EventProcessor
+# filepath: /workspaces/openmanis-qwenclone/core/__init__.py
+from .engine import AgenticLoop
+# from .event_processor import EventProcessor # If it exists and needs to be exported
 
 __all__ = [
-    'ManusAIEngine',
-    'MessageRouter',
-    'EventProcessor'
+    "AgenticLoop"
+    # "EventProcessor"
 ]

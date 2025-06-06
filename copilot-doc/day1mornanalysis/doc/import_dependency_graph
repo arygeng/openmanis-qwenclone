@@ -1,0 +1,295 @@
+// Module Import Dependencies
+digraph {
+	concentrate=true overlap=false rankdir=LR ratio=auto size="20,20" splines=true
+	"tools.message_tool" [label="tools.message_tool" fillcolor=lightgoldenrodyellow shape=box style=filled]
+	knowledge_base [label=knowledge_base fillcolor=whitesmoke shape=box style=filled]
+	knowledge [label=knowledge fillcolor=lightcoral shape=box style=filled]
+	glob [label=glob fillcolor=whitesmoke shape=box style=filled]
+	"tools.browser_tool" [label="tools.browser_tool" fillcolor=lightgoldenrodyellow shape=box style=filled]
+	task_prioritization [label=task_prioritization fillcolor=whitesmoke shape=box style=filled]
+	"config.settings" [label="config.settings" fillcolor=lightgray shape=box style=filled]
+	"system_integration.component_connector" [label="system_integration.component_connector" color=red fillcolor=lightseagreen penwidth=2.0 shape=box style=filled]
+	subprocess [label=subprocess fillcolor=whitesmoke shape=box style=filled]
+	"security.security_context" [label="security.security_context" fillcolor=lightsalmon shape=box style=filled]
+	task_planner [label=task_planner fillcolor=whitesmoke shape=box style=filled]
+	message_tool [label=message_tool fillcolor=whitesmoke shape=box style=filled]
+	"core.engine" [label="core.engine" fillcolor=lightblue shape=box style=filled]
+	re [label=re fillcolor=whitesmoke shape=box style=filled]
+	"planner.task_prioritization" [label="planner.task_prioritization" fillcolor=lightgreen shape=box style=filled]
+	"knowledge.knowledge_base" [label="knowledge.knowledge_base" fillcolor=lightcoral shape=box style=filled]
+	"core.message_router" [label="core.message_router" fillcolor=lightblue shape=box style=filled]
+	component_connector [label=component_connector fillcolor=whitesmoke shape=box style=filled]
+	memory_system [label=memory_system fillcolor=whitesmoke shape=box style=filled]
+	flask_socketio [label=flask_socketio fillcolor=whitesmoke shape=box style=filled]
+	"security.access_rule" [label="security.access_rule" fillcolor=lightsalmon shape=box style=filled]
+	tool_interface [label=tool_interface fillcolor=whitesmoke shape=box style=filled]
+	tempfile [label=tempfile fillcolor=whitesmoke shape=box style=filled]
+	"security.audit_logger" [label="security.audit_logger" fillcolor=lightsalmon shape=box style=filled]
+	"core.interfaces" [label="core.interfaces" fillcolor=lightblue shape=box style=filled]
+	event_processor [label=event_processor fillcolor=whitesmoke shape=box style=filled]
+	permission_validator [label=permission_validator fillcolor=whitesmoke shape=box style=filled]
+	pydantic_settings [label=pydantic_settings fillcolor=whitesmoke shape=box style=filled]
+	shlex [label=shlex fillcolor=whitesmoke shape=box style=filled]
+	time [label=time fillcolor=whitesmoke shape=box style=filled]
+	"security.access_rule_manager" [label="security.access_rule_manager" fillcolor=lightsalmon shape=box style=filled]
+	message_router [label=message_router fillcolor=whitesmoke shape=box style=filled]
+	core [label=core fillcolor=lightblue shape=box style=filled]
+	pseudocode_generator [label=pseudocode_generator fillcolor=whitesmoke shape=box style=filled]
+	"tools.knowledge_tool" [label="tools.knowledge_tool" fillcolor=lightgoldenrodyellow shape=box style=filled]
+	sys [label=sys fillcolor=whitesmoke shape=box style=filled]
+	"tools.tool_interface" [label="tools.tool_interface" fillcolor=lightgoldenrodyellow shape=box style=filled]
+	"planner.pseudocode_generator" [label="planner.pseudocode_generator" fillcolor=lightgreen shape=box style=filled]
+	"tools.file_tool" [label="tools.file_tool" fillcolor=lightgoldenrodyellow shape=box style=filled]
+	"web_interface.app" [label="web_interface.app" fillcolor=lightpink shape=box style=filled]
+	logging [label=logging fillcolor=whitesmoke shape=box style=filled]
+	json [label=json fillcolor=whitesmoke shape=box style=filled]
+	browser_tool [label=browser_tool fillcolor=whitesmoke shape=box style=filled]
+	shell_tool [label=shell_tool fillcolor=whitesmoke shape=box style=filled]
+	"knowledge.memory_system" [label="knowledge.memory_system" fillcolor=lightcoral shape=box style=filled]
+	security [label=security fillcolor=lightsalmon shape=box style=filled]
+	flask_cors [label=flask_cors fillcolor=whitesmoke shape=box style=filled]
+	"core.event_processor" [label="core.event_processor" fillcolor=lightblue shape=box style=filled]
+	tools [label=tools fillcolor=lightgoldenrodyellow shape=box style=filled]
+	datetime [label=datetime fillcolor=whitesmoke shape=box style=filled]
+	"security.permission_validator" [label="security.permission_validator" fillcolor=lightsalmon shape=box style=filled]
+	generate_dependency_map [label=generate_dependency_map fillcolor=whitesmoke shape=box style=filled]
+	access_rule_manager [label=access_rule_manager fillcolor=whitesmoke shape=box style=filled]
+	"core.types" [label="core.types" fillcolor=lightblue shape=box style=filled]
+	"core.logging" [label="core.logging" fillcolor=lightblue shape=box style=filled]
+	"tools.manus_tools" [label="tools.manus_tools" fillcolor=lightgoldenrodyellow shape=box style=filled]
+	engine [label=engine fillcolor=whitesmoke shape=box style=filled]
+	audit_logger [label=audit_logger fillcolor=whitesmoke shape=box style=filled]
+	data_flow [label=data_flow fillcolor=whitesmoke shape=box style=filled]
+	pathlib [label=pathlib fillcolor=whitesmoke shape=box style=filled]
+	requests [label=requests fillcolor=whitesmoke shape=box style=filled]
+	bs4 [label=bs4 fillcolor=whitesmoke shape=box style=filled]
+	enum [label=enum fillcolor=whitesmoke shape=box style=filled]
+	"system_integration.monitoring" [label="system_integration.monitoring" fillcolor=lightseagreen shape=box style=filled]
+	"logging.handlers" [label="logging.handlers" fillcolor=whitesmoke shape=box style=filled]
+	asyncio [label=asyncio fillcolor=whitesmoke shape=box style=filled]
+	httpx [label=httpx fillcolor=whitesmoke shape=box style=filled]
+	"tools.shell_tool" [label="tools.shell_tool" fillcolor=lightgoldenrodyellow shape=box style=filled]
+	monitoring [label=monitoring fillcolor=whitesmoke shape=box style=filled]
+	knowledge_tool [label=knowledge_tool fillcolor=whitesmoke shape=box style=filled]
+	ast [label=ast fillcolor=whitesmoke shape=box style=filled]
+	file_tool [label=file_tool fillcolor=whitesmoke shape=box style=filled]
+	"security.role_permissions" [label="security.role_permissions" fillcolor=lightsalmon shape=box style=filled]
+	flask [label=flask fillcolor=whitesmoke shape=box style=filled]
+	os [label=os fillcolor=whitesmoke shape=box style=filled]
+	planner [label=planner fillcolor=lightgreen shape=box style=filled]
+	uuid [label=uuid fillcolor=whitesmoke shape=box style=filled]
+	"planner.task_planner" [label="planner.task_planner" fillcolor=lightgreen shape=box style=filled]
+	abc [label=abc fillcolor=whitesmoke shape=box style=filled]
+	role_permissions [label=role_permissions fillcolor=whitesmoke shape=box style=filled]
+	typing [label=typing fillcolor=whitesmoke shape=box style=filled]
+	"system_integration.data_flow" [label="system_integration.data_flow" color=red fillcolor=lightseagreen penwidth=2.0 shape=box style=filled]
+	system_integration [label=system_integration fillcolor=lightseagreen shape=box style=filled]
+	generate_dependency_map -> os
+	generate_dependency_map -> ast
+	generate_dependency_map -> pathlib
+	generate_dependency_map -> json
+	"core.types" -> enum
+	"core.interfaces" -> typing
+	"core.interfaces" -> abc
+	"core.logging" -> flask_socketio
+	"core.logging" -> logging
+	"core.logging" -> "logging.handlers"
+	"core.logging" -> os
+	"core.event_processor" -> enum
+	"core.event_processor" -> "core.types"
+	"core.event_processor" -> logging
+	"core.event_processor" -> typing
+	"core.engine" -> time
+	"core.engine" -> "tools.message_tool"
+	"core.engine" -> "tools.browser_tool"
+	"core.engine" -> "config.settings"
+	"core.engine" -> "system_integration.component_connector"
+	"core.engine" -> asyncio
+	"core.engine" -> "core.event_processor"
+	"core.engine" -> "tools.shell_tool"
+	"core.engine" -> "tools.knowledge_tool"
+	"core.engine" -> "security.permission_validator"
+	"core.engine" -> "core.types"
+	"core.engine" -> "core.logging"
+	"core.engine" -> "knowledge.knowledge_base"
+	"core.engine" -> "tools.file_tool"
+	"core.engine" -> "core.message_router"
+	"core.engine" -> "tools.manus_tools"
+	"core.engine" -> logging
+	"core.engine" -> json
+	"core.engine" -> "planner.task_planner"
+	"core.engine" -> "knowledge.memory_system"
+	"core.engine" -> "core.interfaces"
+	"core.engine" -> typing
+	"core.message_router" -> uuid
+	"core.message_router" -> "core.event_processor"
+	"core.message_router" -> "tools.tool_interface"
+	"core.message_router" -> datetime
+	"core.message_router" -> typing
+	"core.message_router" -> "security.permission_validator"
+	core -> event_processor
+	core -> message_router
+	core -> engine
+	"config.settings" -> pydantic_settings
+	"config.settings" -> typing
+	"system_integration.component_connector" -> uuid
+	"system_integration.component_connector" -> "planner.task_planner"
+	"system_integration.component_connector" -> "core.types"
+	"system_integration.component_connector" -> "security.access_rule_manager"
+	"system_integration.component_connector" -> "security.audit_logger"
+	"system_integration.component_connector" -> "planner.task_prioritization"
+	"system_integration.component_connector" -> "tools.tool_interface"
+	"system_integration.component_connector" -> "core.interfaces"
+	"system_integration.component_connector" -> "system_integration.monitoring"
+	"system_integration.component_connector" -> datetime
+	"system_integration.component_connector" -> typing
+	"system_integration.component_connector" -> "system_integration.data_flow" [color=red penwidth=2.0]
+	"system_integration.component_connector" -> "security.permission_validator"
+	"system_integration.data_flow" -> uuid
+	"system_integration.data_flow" -> "core.types"
+	"system_integration.data_flow" -> datetime
+	"system_integration.data_flow" -> typing
+	"system_integration.data_flow" -> "security.permission_validator"
+	"system_integration.data_flow" -> "system_integration.component_connector" [color=red penwidth=2.0]
+	"system_integration.monitoring" -> uuid
+	"system_integration.monitoring" -> datetime
+	"system_integration.monitoring" -> typing
+	system_integration -> component_connector
+	system_integration -> data_flow
+	system_integration -> monitoring
+	"web_interface.app" -> flask_cors
+	"web_interface.app" -> flask
+	"web_interface.app" -> os
+	"web_interface.app" -> "config.settings"
+	"web_interface.app" -> "core.logging"
+	"web_interface.app" -> logging
+	"web_interface.app" -> datetime
+	"web_interface.app" -> flask_socketio
+	"web_interface.app" -> "core.engine"
+	"web_interface.app" -> json
+	"web_interface.app" -> sys
+	"web_interface.app" -> asyncio
+	"knowledge.memory_system" -> datetime
+	"knowledge.memory_system" -> typing
+	"knowledge.memory_system" -> json
+	"knowledge.knowledge_base" -> typing
+	"knowledge.knowledge_base" -> json
+	knowledge -> memory_system
+	knowledge -> knowledge_base
+	"planner.pseudocode_generator" -> uuid
+	"planner.pseudocode_generator" -> "planner.task_planner"
+	"planner.pseudocode_generator" -> enum
+	"planner.pseudocode_generator" -> datetime
+	"planner.pseudocode_generator" -> typing
+	"planner.task_prioritization" -> uuid
+	"planner.task_prioritization" -> "core.event_processor"
+	"planner.task_prioritization" -> "planner.task_planner"
+	"planner.task_prioritization" -> enum
+	"planner.task_prioritization" -> datetime
+	"planner.task_prioritization" -> typing
+	planner -> task_planner
+	planner -> task_prioritization
+	planner -> pseudocode_generator
+	"planner.task_planner" -> uuid
+	"planner.task_planner" -> "core.event_processor"
+	"planner.task_planner" -> enum
+	"planner.task_planner" -> datetime
+	"planner.task_planner" -> typing
+	"security.role_permissions" -> uuid
+	"security.role_permissions" -> "security.permission_validator"
+	"security.role_permissions" -> datetime
+	"security.role_permissions" -> typing
+	"security.permission_validator" -> uuid
+	"security.permission_validator" -> "core.types"
+	"security.permission_validator" -> enum
+	"security.permission_validator" -> datetime
+	"security.permission_validator" -> typing
+	"security.permission_validator" -> "security.access_rule"
+	"security.security_context" -> uuid
+	"security.security_context" -> "security.permission_validator"
+	"security.security_context" -> datetime
+	"security.security_context" -> typing
+	"security.access_rule" -> uuid
+	"security.access_rule" -> "core.types"
+	"security.access_rule" -> enum
+	"security.access_rule" -> datetime
+	"security.access_rule" -> typing
+	"security.access_rule_manager" -> uuid
+	"security.access_rule_manager" -> enum
+	"security.access_rule_manager" -> datetime
+	"security.access_rule_manager" -> typing
+	"security.access_rule_manager" -> "security.access_rule"
+	"security.access_rule_manager" -> "security.permission_validator"
+	"security.audit_logger" -> uuid
+	"security.audit_logger" -> "security.access_rule_manager"
+	"security.audit_logger" -> datetime
+	"security.audit_logger" -> typing
+	"security.audit_logger" -> "security.permission_validator"
+	security -> access_rule_manager
+	security -> audit_logger
+	security -> permission_validator
+	security -> role_permissions
+	"tools.tool_interface" -> uuid
+	"tools.tool_interface" -> "core.types"
+	"tools.tool_interface" -> enum
+	"tools.tool_interface" -> datetime
+	"tools.tool_interface" -> typing
+	"tools.tool_interface" -> "security.permission_validator"
+	"tools.manus_tools" -> re
+	"tools.manus_tools" -> "core.types"
+	"tools.manus_tools" -> tempfile
+	"tools.manus_tools" -> time
+	"tools.manus_tools" -> subprocess
+	"tools.manus_tools" -> os
+	"tools.manus_tools" -> "tools.tool_interface"
+	"tools.manus_tools" -> glob
+	"tools.manus_tools" -> pathlib
+	"tools.manus_tools" -> requests
+	"tools.manus_tools" -> typing
+	"tools.manus_tools" -> json
+	"tools.manus_tools" -> asyncio
+	"tools.browser_tool" -> uuid
+	"tools.browser_tool" -> httpx
+	"tools.browser_tool" -> re
+	"tools.browser_tool" -> "core.logging"
+	"tools.browser_tool" -> "tools.tool_interface"
+	"tools.browser_tool" -> datetime
+	"tools.browser_tool" -> typing
+	"tools.browser_tool" -> bs4
+	"tools.shell_tool" -> "core.event_processor"
+	"tools.shell_tool" -> shlex
+	"tools.shell_tool" -> re
+	"tools.shell_tool" -> subprocess
+	"tools.shell_tool" -> "core.logging"
+	"tools.shell_tool" -> "tools.tool_interface"
+	"tools.shell_tool" -> typing
+	"tools.knowledge_tool" -> uuid
+	"tools.knowledge_tool" -> "core.logging"
+	"tools.knowledge_tool" -> "knowledge.knowledge_base"
+	"tools.knowledge_tool" -> "tools.tool_interface"
+	"tools.knowledge_tool" -> enum
+	"tools.knowledge_tool" -> datetime
+	"tools.knowledge_tool" -> typing
+	"tools.message_tool" -> uuid
+	"tools.message_tool" -> "core.event_processor"
+	"tools.message_tool" -> re
+	"tools.message_tool" -> "core.logging"
+	"tools.message_tool" -> "tools.tool_interface"
+	"tools.message_tool" -> datetime
+	"tools.message_tool" -> typing
+	tools -> tool_interface
+	tools -> shell_tool
+	tools -> knowledge_tool
+	tools -> file_tool
+	tools -> message_tool
+	tools -> browser_tool
+	"tools.file_tool" -> uuid
+	"tools.file_tool" -> re
+	"tools.file_tool" -> os
+	"tools.file_tool" -> "core.logging"
+	"tools.file_tool" -> "tools.tool_interface"
+	"tools.file_tool" -> enum
+	"tools.file_tool" -> pathlib
+	"tools.file_tool" -> datetime
+	"tools.file_tool" -> typing
+}

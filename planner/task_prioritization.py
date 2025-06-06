@@ -9,7 +9,8 @@ from enum import Enum
 from typing import Dict, Any, List, Optional, Union, Callable
 
 from core.event_processor import EventType
-from planner.task_planner import TaskPlanner, ExecutionPlan, ExecutionStep, TaskPriority, PlanStatus
+from .task_planner import TaskPlanner # Import TaskPlanner from local module
+from .plan_types import ExecutionPlan, ExecutionStep, TaskPriority, PlanStatus # Import types from new module
 
 class PriorityRuleType(Enum):
     """Types of priority rules"""

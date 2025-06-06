@@ -5,17 +5,23 @@ Implements component connection and data flow
 
 import uuid
 from datetime import datetime
-from typing import Dict, Any, List, Optional, Union, Callable
+from typing import Dict, Any, List, Optional, Union, Callable, TYPE_CHECKING # Added TYPE_CHECKING
 
 from core.types import SecurityException
-from planner.task_prioritization import TaskPrioritizer
-from planner.task_planner import TaskPlanner
-from tools.tool_interface import ToolAdapter
+# from planner.task_prioritization import TaskPrioritizer # Removed to break circular import
+# from planner.task_planner import TaskPlanner # Moved under TYPE_CHECKING
+# from tools.tool_interface import ToolAdapter # Moved under TYPE_CHECKING
 from security.permission_validator import PermissionValidator, SecurityContext
 from security.audit_logger import AuditLogger, AuditEvent
 from security.access_rule_manager import AccessRuleManager
 from .data_flow import MessageRouter
 from .monitoring import SystemMonitor
+# from core.engine import ManusAIEngine # Removed
+from core.interfaces import IEngine # Added
+
+if TYPE_CHECKING:
+    from planner.task_planner import TaskPlanner # Moved here
+    from tools.tool_interface import ToolAdapter # Moved here
 
 class ComponentConnection:
     """
@@ -266,6 +272,18 @@ class ComponentConnector:
             
         return connection_ids
 
+    def get_component(self, name: str) -> Optional[Any]:
+        """
+        Retrieve a registered component by name.
+
+        Args:
+            name: The name of the component.
+
+        Returns:
+            The component instance if found, else None.
+        """
+        return self.components.get(name)
+
     def get_connection_status(self) -> Dict[str, Any]:
         """Get current status of all connections"""
         return {
@@ -390,11 +408,11 @@ class ComponentConnector:
                 "message_received": message
             }
 
-    def integrate_all_components(self, 
-                              engine: ManusAIEngine,
-                              planner: TaskPlanner,
-                              validator: PermissionValidator,
-                              tool_manager: ToolAdapter,
+    def integrate_all_components(self,
+                               engine: IEngine, # Type hint with IEngine
+                               planner: 'TaskPlanner', # Changed to string literal
+                               validator: PermissionValidator,
+                              tool_manager: 'ToolAdapter', # Changed to string literal
                               audit_logger: AuditLogger,
                               access_rules: AccessRuleManager) -> None:
         """
@@ -425,9 +443,9 @@ class ComponentConnector:
         # Configure monitoring
         self._setup_monitoring(engine, validator, audit_logger)
 
-    def _configure_security_integrations(self, 
+    def _configure_security_integrations(self,
                                      validator: PermissionValidator,
-                                     tool_manager: ToolAdapter,
+                                     tool_manager: 'ToolAdapter', # Changed to string literal
                                      access_rules: AccessRuleManager) -> None:
         """
         Configure security integrations between components
@@ -439,7 +457,9 @@ class ComponentConnector:
         """
         # Set validator on engine
         if "engine" in self.components:
-            self.components["engine"].set_validator(validator)
+            engine_component: IEngine = self.components["engine"] # Cast or ensure it's IEngine
+            if hasattr(engine_component, 'set_validator'): # Check if method exists
+                 engine_component.set_validator(validator)
             
         # Apply access rules to validator
         if "access_rules" in self.components:
@@ -453,7 +473,7 @@ class ComponentConnector:
             audit_logger = self.components["audit_logger"]
             audit_logger.apply_to_validator(validator)
 
-    def _setup_monitoring(self, engine: ManusAIEngine, validator: PermissionValidator, audit_logger: AuditLogger) -> None:
+    def _setup_monitoring(self, engine: IEngine, validator: PermissionValidator, audit_logger: AuditLogger) -> None: # Type hint with IEngine
         """
         Setup monitoring for system components
         
@@ -469,7 +489,8 @@ class ComponentConnector:
         self.system_monitor.register_component("tool_manager")
         
         # Setup monitoring for engine
-        if "engine" in self.components:
+        # engine parameter is now IEngine due to signature change
+        if hasattr(engine, 'set_monitor_callback'): # Check if method exists on the passed IEngine
             engine.set_monitor_callback(self._handle_engine_event)
             
         # Setup monitoring for validator
@@ -518,7 +539,9 @@ class ComponentConnector:
         """
         # Forward event to engine
         if "engine" in self.components:
-            self.components["engine"].handle_security_event(event)
+            engine_component: IEngine = self.components["engine"] # Cast or ensure it's IEngine
+            if hasattr(engine_component, 'handle_security_event'): # Check if method exists
+                engine_component.handle_security_event(event)
             
         # Forward event to planner
         if "planner" in self.components:

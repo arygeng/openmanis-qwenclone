@@ -1,142 +1,90 @@
-# Memory System Implementation for Manus AI Clone
-"""
-Memory management system for conversation and task history
-"""
-
-from typing import Dict, Any, List, Optional
+import uuid
 from datetime import datetime
-import json
+from typing import List, Dict, Any, Optional
 
+class Message:
+    def __init__(self, role: str, content: str, timestamp: Optional[datetime] = None, message_id: Optional[str] = None):
+        self.message_id = message_id or str(uuid.uuid4())
+        self.role = role  # "user", "assistant", "system", "tool"
+        self.content = content
+        self.timestamp = timestamp or datetime.utcnow()
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "message_id": self.message_id,
+            "role": self.role,
+            "content": self.content,
+            "timestamp": self.timestamp.isoformat()
+        }
 
 class MemorySystem:
     """
-    Memory management system for conversation and task history
+    Basic in-memory implementation of the MemorySystem.
+    Manages conversation history and provides context.
     """
-    
     def __init__(self):
-        self.conversation_history = []
-        self.task_history = []
-        self.context_cache = {}
-        self.max_history_size = 1000
-        self.initialized = True
-    
-    async def store_conversation(self, user_id: str, message: Dict[str, Any]) -> None:
-        """Store conversation message in memory"""
-        conversation_entry = {
-            "user_id": user_id,
-            "message": message,
-            "timestamp": datetime.now().isoformat(),
-            "type": message.get("type", "user")
-        }
-        
-        self.conversation_history.append(conversation_entry)
-        
-        # Maintain max history size
-        if len(self.conversation_history) > self.max_history_size:
-            self.conversation_history = self.conversation_history[-self.max_history_size:]
-    
-    async def get_context(self, user_id: str) -> Dict[str, Any]:
-        """Retrieve conversation context for user"""
-        user_conversations = [
-            conv for conv in self.conversation_history 
-            if conv["user_id"] == user_id
-        ]
-        
-        return {
-            "user_id": user_id,
-            "conversation_count": len(user_conversations),
-            "recent_messages": user_conversations[-10:],  # Last 10 messages
-            "context_summary": self._generate_context_summary(user_conversations)
-        }
-    
-    async def store_task_result(self, task_id: str, result: Dict[str, Any]) -> None:
-        """Store task execution result"""
-        task_entry = {
-            "task_id": task_id,
-            "result": result,
-            "timestamp": datetime.now().isoformat(),
-            "status": result.get("status", "completed")
-        }
-        
-        self.task_history.append(task_entry)
-        
-        # Maintain max history size
-        if len(self.task_history) > self.max_history_size:
-            self.task_history = self.task_history[-self.max_history_size:]
-    
-    async def get_relevant_history(self, query: str, limit: int = 10) -> List[Dict[str, Any]]:
-        """Get relevant historical context for query"""
-        # Simple keyword-based relevance for Phase 1
-        # Will be enhanced with semantic search in Phase 2
-        query_lower = query.lower()
-        relevant_items = []
-        
-        # Search conversation history
-        for conv in self.conversation_history:
-            message_text = str(conv.get("message", "")).lower()
-            if any(word in message_text for word in query_lower.split()):
-                relevant_items.append({
-                    "type": "conversation",
-                    "relevance_score": self._calculate_relevance(query_lower, message_text),
-                    "data": conv
-                })
-        
-        # Search task history
-        for task in self.task_history:
-            task_text = str(task.get("result", "")).lower()
-            if any(word in task_text for word in query_lower.split()):
-                relevant_items.append({
-                    "type": "task",
-                    "relevance_score": self._calculate_relevance(query_lower, task_text),
-                    "data": task
-                })
-        
-        # Sort by relevance and return top results
-        relevant_items.sort(key=lambda x: x["relevance_score"], reverse=True)
-        return relevant_items[:limit]
-    
-    def _generate_context_summary(self, conversations: List[Dict[str, Any]]) -> str:
-        """Generate a summary of conversation context"""
-        if not conversations:
-            return "No conversation history"
-        
-        total_messages = len(conversations)
-        recent_topics = []
-        
-        # Extract topics from recent messages (simple keyword extraction)
-        for conv in conversations[-5:]:
-            message = conv.get("message", {})
-            if isinstance(message, dict) and "content" in message:
-                content = str(message["content"]).lower()
-                # Simple topic extraction - will be enhanced in Phase 2
-                words = content.split()
-                topics = [word for word in words if len(word) > 4]
-                recent_topics.extend(topics[:3])  # Top 3 words per message
-        
-        unique_topics = list(set(recent_topics))[:5]  # Top 5 unique topics
-        
-        return f"Total messages: {total_messages}, Recent topics: {', '.join(unique_topics)}"
-    
-    def _calculate_relevance(self, query: str, text: str) -> float:
-        """Calculate relevance score between query and text"""
-        query_words = set(query.split())
-        text_words = set(text.split())
-        
-        if not query_words:
-            return 0.0
-        
-        # Simple Jaccard similarity
-        intersection = len(query_words.intersection(text_words))
-        union = len(query_words.union(text_words))
-        
-        return intersection / union if union > 0 else 0.0
-    
-    def get_stats(self) -> Dict[str, Any]:
-        """Get memory system statistics"""
-        return {
-            "conversation_entries": len(self.conversation_history),
-            "task_entries": len(self.task_history),
-            "cache_entries": len(self.context_cache),
-            "max_history_size": self.max_history_size,
-            "initialized": self.initialized
-        }
+        self.conversations: Dict[str, List[Message]] = {} # Stores conversation history per conversation_id
+        self.short_term_memory: Dict[str, Any] = {} # For general short-term data
+        print("INFO: Basic MemorySystem initialized (in-memory).")
+
+    def start_conversation(self, conversation_id: Optional[str] = None) -> str:
+        """Starts a new conversation or uses an existing ID."""
+        conv_id = conversation_id or str(uuid.uuid4())
+        if conv_id not in self.conversations:
+            self.conversations[conv_id] = []
+        return conv_id
+
+    def add_message(self, conversation_id: str, role: str, content: str) -> Message:
+        """Adds a message to the conversation history."""
+        if conversation_id not in self.conversations:
+            # Or raise an error, or auto-start. For now, auto-start.
+            self.start_conversation(conversation_id)
+
+        message = Message(role=role, content=content)
+        self.conversations[conversation_id].append(message)
+        return message
+
+    def get_conversation_history(self, conversation_id: str, limit: Optional[int] = None) -> List[Message]:
+        """Retrieves the conversation history for a given ID."""
+        history = self.conversations.get(conversation_id, [])
+        if limit:
+            return history[-limit:]
+        return history
+
+    def get_formatted_history(self, conversation_id: str, limit: Optional[int] = None) -> List[Dict[str, str]]:
+        """Retrieves conversation history in a simple list of dicts format."""
+        messages = self.get_conversation_history(conversation_id, limit)
+        return [{"role": msg.role, "content": msg.content} for msg in messages]
+
+    def get_context(self, conversation_id: str, max_tokens: Optional[int] = None) -> str:
+        """
+        Generates a simple context string from the conversation history.
+        Rudimentary implementation for now.
+        """
+        history = self.get_conversation_history(conversation_id)
+        context_str = "\\n".join([f"{msg.role}: {msg.content}" for msg in history])
+
+        if max_tokens: # Very basic token management by character length
+            # This is not a proper tokenizer, just a rough estimate
+            if len(context_str) > max_tokens * 4: # Assuming avg 4 chars per token
+                 context_str = context_str[-(max_tokens*4):]
+        return context_str
+
+    def store_short_term(self, key: str, value: Any):
+        """Stores a value in short-term memory."""
+        self.short_term_memory[key] = value
+
+    def retrieve_short_term(self, key: str) -> Optional[Any]:
+        """Retrieves a value from short-term memory."""
+        return self.short_term_memory.get(key)
+
+    def clear_conversation(self, conversation_id: str):
+        """Clears the history for a specific conversation."""
+        if conversation_id in self.conversations:
+            del self.conversations[conversation_id]
+
+    def clear_all_memory(self):
+        """Clears all conversations and short-term memory."""
+        self.conversations.clear()
+        self.short_term_memory.clear()
+        print("INFO: All memory cleared in MemorySystem.")

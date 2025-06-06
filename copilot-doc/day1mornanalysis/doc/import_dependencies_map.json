@@ -1,0 +1,2985 @@
+[
+    {
+        "source_file_path": "generate_dependency_map.py",
+        "source_module_qualname": "generate_dependency_map",
+        "imported_module_qualname": "ast",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import ast",
+        "line_number": 1
+    },
+    {
+        "source_file_path": "generate_dependency_map.py",
+        "source_module_qualname": "generate_dependency_map",
+        "imported_module_qualname": "json",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import json",
+        "line_number": 2
+    },
+    {
+        "source_file_path": "generate_dependency_map.py",
+        "source_module_qualname": "generate_dependency_map",
+        "imported_module_qualname": "os",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import os",
+        "line_number": 3
+    },
+    {
+        "source_file_path": "generate_dependency_map.py",
+        "source_module_qualname": "generate_dependency_map",
+        "imported_module_qualname": "pathlib",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import pathlib",
+        "line_number": 4
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "core.engine",
+        "imported_symbols": [
+            "ManusAIEngine"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .core.engine import ManusAIEngine",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "core.message_router",
+        "imported_symbols": [
+            "MessageRouter"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .core.message_router import MessageRouter",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "core.event_processor",
+        "imported_symbols": [
+            "EventProcessor"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .core.event_processor import EventProcessor",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "planner.task_planner",
+        "imported_symbols": [
+            "TaskPlanner"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .planner.task_planner import TaskPlanner",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .security.permission_validator import PermissionValidator",
+        "line_number": 15
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "security.role_permissions",
+        "imported_symbols": [
+            "RoleManager"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .security.role_permissions import RoleManager",
+        "line_number": 16
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "security.access_rule_manager",
+        "imported_symbols": [
+            "AccessRuleManager"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .security.access_rule_manager import AccessRuleManager",
+        "line_number": 17
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "security.audit_logger",
+        "imported_symbols": [
+            "AuditLogger"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .security.audit_logger import AuditLogger",
+        "line_number": 18
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .tools.tool_interface import ToolAdapter",
+        "line_number": 21
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "tools.message_tool",
+        "imported_symbols": [
+            "MessageTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .tools.message_tool import MessageTool",
+        "line_number": 22
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "tools.file_tool",
+        "imported_symbols": [
+            "FileTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .tools.file_tool import FileTool",
+        "line_number": 23
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "tools.shell_tool",
+        "imported_symbols": [
+            "ShellTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .tools.shell_tool import ShellTool",
+        "line_number": 24
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "tools.browser_tool",
+        "imported_symbols": [
+            "BrowserTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .tools.browser_tool import BrowserTool",
+        "line_number": 25
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "tools.knowledge_tool",
+        "imported_symbols": [
+            "KnowledgeTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .tools.knowledge_tool import KnowledgeTool",
+        "line_number": 26
+    },
+    {
+        "source_file_path": "__init__.py",
+        "source_module_qualname": "",
+        "imported_module_qualname": "system_integration.component_connector",
+        "imported_symbols": [
+            "ComponentConnector"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .system_integration.component_connector import ComponentConnector",
+        "line_number": 29
+    },
+    {
+        "source_file_path": "core/types.py",
+        "source_module_qualname": "core.types",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "core/interfaces.py",
+        "source_module_qualname": "core.interfaces",
+        "imported_module_qualname": "abc",
+        "imported_symbols": [
+            "ABC",
+            "abstractmethod"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from abc import ABC, abstractmethod",
+        "line_number": 2
+    },
+    {
+        "source_file_path": "core/interfaces.py",
+        "source_module_qualname": "core.interfaces",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Any",
+            "Dict"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Any, Dict",
+        "line_number": 3
+    },
+    {
+        "source_file_path": "core/logging.py",
+        "source_module_qualname": "core.logging",
+        "imported_module_qualname": "logging",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import logging",
+        "line_number": 5
+    },
+    {
+        "source_file_path": "core/logging.py",
+        "source_module_qualname": "core.logging",
+        "imported_module_qualname": "os",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import os",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "core/logging.py",
+        "source_module_qualname": "core.logging",
+        "imported_module_qualname": "logging.handlers",
+        "imported_symbols": [
+            "RotatingFileHandler"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from logging.handlers import RotatingFileHandler",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "core/logging.py",
+        "source_module_qualname": "core.logging",
+        "imported_module_qualname": "flask_socketio",
+        "imported_symbols": [
+            "SocketIO"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from flask_socketio import SocketIO",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "core/event_processor.py",
+        "source_module_qualname": "core.event_processor",
+        "imported_module_qualname": "logging",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import logging",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "core/event_processor.py",
+        "source_module_qualname": "core.event_processor",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "core/event_processor.py",
+        "source_module_qualname": "core.event_processor",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "core/event_processor.py",
+        "source_module_qualname": "core.event_processor",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "AgentState"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import AgentState",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "asyncio",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import asyncio",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "json",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import json",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "time",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import time",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "logging",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import logging",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "core.logging",
+        "imported_symbols": [
+            "get_logger"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.logging import get_logger",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "config.settings",
+        "imported_symbols": [
+            "Settings"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from config.settings import Settings",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "system_integration.component_connector",
+        "imported_symbols": [
+            "ComponentConnector"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from system_integration.component_connector import ComponentConnector",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "core.interfaces",
+        "imported_symbols": [
+            "IEngine"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.interfaces import IEngine # Or wherever IEngine is defined",
+        "line_number": 14
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "AgentState",
+            "SecurityException",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import AgentState, SecurityException, PermissionLevel",
+        "line_number": 16
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "core.message_router",
+        "imported_symbols": [
+            "MessageRouter"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.message_router import MessageRouter",
+        "line_number": 17
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "core.event_processor",
+        "imported_symbols": [
+            "EventProcessor"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.event_processor import EventProcessor",
+        "line_number": 18
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "knowledge.knowledge_base",
+        "imported_symbols": [
+            "KnowledgeBase"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from knowledge.knowledge_base import KnowledgeBase # Will be fetched from connector # Uncommented",
+        "line_number": 21
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import PermissionValidator # Will be fetched from connector",
+        "line_number": 22
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "planner.task_planner",
+        "imported_symbols": [
+            "PlanStatus"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from planner.task_planner import PlanStatus # For managing ExecutionPlan status",
+        "line_number": 23
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "SecurityContext"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import SecurityContext # For explicit permission validation",
+        "line_number": 24
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "planner.task_planner",
+        "imported_symbols": [
+            "TaskPlanner"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from planner.task_planner import TaskPlanner",
+        "line_number": 25
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "knowledge.memory_system",
+        "imported_symbols": [
+            "MemorySystem"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from knowledge.memory_system import MemorySystem",
+        "line_number": 26
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "tools.manus_tools",
+        "imported_symbols": [
+            "manus_tools"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.manus_tools import manus_tools # Already here, though we might instantiate tools individually",
+        "line_number": 30
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "tools.message_tool",
+        "imported_symbols": [
+            "MessageTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.message_tool import MessageTool # Added",
+        "line_number": 31
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "tools.file_tool",
+        "imported_symbols": [
+            "FileTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.file_tool import FileTool # Added",
+        "line_number": 32
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "tools.shell_tool",
+        "imported_symbols": [
+            "ShellTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.shell_tool import ShellTool # Added",
+        "line_number": 33
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "tools.browser_tool",
+        "imported_symbols": [
+            "BrowserTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.browser_tool import BrowserTool # Added",
+        "line_number": 34
+    },
+    {
+        "source_file_path": "core/engine.py",
+        "source_module_qualname": "core.engine",
+        "imported_module_qualname": "tools.knowledge_tool",
+        "imported_symbols": [
+            "KnowledgeTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.knowledge_tool import KnowledgeTool # Added",
+        "line_number": 35
+    },
+    {
+        "source_file_path": "core/message_router.py",
+        "source_module_qualname": "core.message_router",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "core/message_router.py",
+        "source_module_qualname": "core.message_router",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "core/message_router.py",
+        "source_module_qualname": "core.message_router",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "core/message_router.py",
+        "source_module_qualname": "core.message_router",
+        "imported_module_qualname": "core.event_processor",
+        "imported_symbols": [
+            "EventProcessor"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.event_processor import EventProcessor",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "core/message_router.py",
+        "source_module_qualname": "core.message_router",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator",
+            "SecurityContext"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import PermissionValidator, SecurityContext",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "core/message_router.py",
+        "source_module_qualname": "core.message_router",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "core/__init__.py",
+        "source_module_qualname": "core",
+        "imported_module_qualname": "engine",
+        "imported_symbols": [
+            "ManusAIEngine"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .engine import ManusAIEngine",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "core/__init__.py",
+        "source_module_qualname": "core",
+        "imported_module_qualname": "message_router",
+        "imported_symbols": [
+            "MessageRouter"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .message_router import MessageRouter",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "core/__init__.py",
+        "source_module_qualname": "core",
+        "imported_module_qualname": "event_processor",
+        "imported_symbols": [
+            "EventProcessor"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .event_processor import EventProcessor",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "config/settings.py",
+        "source_module_qualname": "config.settings",
+        "imported_module_qualname": "pydantic_settings",
+        "imported_symbols": [
+            "BaseSettings"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from pydantic_settings import BaseSettings",
+        "line_number": 1
+    },
+    {
+        "source_file_path": "config/settings.py",
+        "source_module_qualname": "config.settings",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Optional",
+        "line_number": 2
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union",
+            "Callable"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union, Callable",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "SecurityException"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import SecurityException",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "planner.task_prioritization",
+        "imported_symbols": [
+            "TaskPrioritizer"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from planner.task_prioritization import TaskPrioritizer",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "planner.task_planner",
+        "imported_symbols": [
+            "TaskPlanner"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from planner.task_planner import TaskPlanner",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator",
+            "SecurityContext"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import PermissionValidator, SecurityContext",
+        "line_number": 14
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "security.audit_logger",
+        "imported_symbols": [
+            "AuditLogger",
+            "AuditEvent"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.audit_logger import AuditLogger, AuditEvent",
+        "line_number": 15
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "security.access_rule_manager",
+        "imported_symbols": [
+            "AccessRuleManager"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.access_rule_manager import AccessRuleManager",
+        "line_number": 16
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "system_integration.data_flow",
+        "imported_symbols": [
+            "MessageRouter"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .data_flow import MessageRouter",
+        "line_number": 17
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "system_integration.monitoring",
+        "imported_symbols": [
+            "SystemMonitor"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .monitoring import SystemMonitor",
+        "line_number": 18
+    },
+    {
+        "source_file_path": "system_integration/component_connector.py",
+        "source_module_qualname": "system_integration.component_connector",
+        "imported_module_qualname": "core.interfaces",
+        "imported_symbols": [
+            "IEngine"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.interfaces import IEngine # Added",
+        "line_number": 20
+    },
+    {
+        "source_file_path": "system_integration/data_flow.py",
+        "source_module_qualname": "system_integration.data_flow",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "system_integration/data_flow.py",
+        "source_module_qualname": "system_integration.data_flow",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "system_integration/data_flow.py",
+        "source_module_qualname": "system_integration.data_flow",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union",
+            "Callable",
+            "TYPE_CHECKING"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union, Callable, TYPE_CHECKING",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "system_integration/data_flow.py",
+        "source_module_qualname": "system_integration.data_flow",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "SecurityException",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import SecurityException, PermissionLevel",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "system_integration/data_flow.py",
+        "source_module_qualname": "system_integration.data_flow",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "SecurityContext",
+            "PermissionValidator"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import SecurityContext, PermissionValidator",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "system_integration/data_flow.py",
+        "source_module_qualname": "system_integration.data_flow",
+        "imported_module_qualname": "system_integration.component_connector",
+        "imported_symbols": [
+            "ComponentConnector",
+            "DataFlow"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from system_integration.component_connector import ComponentConnector, DataFlow",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "system_integration/monitoring.py",
+        "source_module_qualname": "system_integration.monitoring",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "system_integration/monitoring.py",
+        "source_module_qualname": "system_integration.monitoring",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime",
+            "timedelta"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime, timedelta",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "system_integration/monitoring.py",
+        "source_module_qualname": "system_integration.monitoring",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union",
+            "Callable"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union, Callable",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "system_integration/__init__.py",
+        "source_module_qualname": "system_integration",
+        "imported_module_qualname": "component_connector",
+        "imported_symbols": [
+            "ComponentConnector"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .component_connector import ComponentConnector",
+        "line_number": 2
+    },
+    {
+        "source_file_path": "system_integration/__init__.py",
+        "source_module_qualname": "system_integration",
+        "imported_module_qualname": "data_flow",
+        "imported_symbols": [
+            "MessageRouter"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .data_flow import MessageRouter",
+        "line_number": 3
+    },
+    {
+        "source_file_path": "system_integration/__init__.py",
+        "source_module_qualname": "system_integration",
+        "imported_module_qualname": "monitoring",
+        "imported_symbols": [
+            "SystemMonitor"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .monitoring import SystemMonitor",
+        "line_number": 4
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "asyncio",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import asyncio",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "json",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import json",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "os",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import os",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "sys",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import sys",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "flask",
+        "imported_symbols": [
+            "Flask",
+            "render_template",
+            "request",
+            "jsonify",
+            "send_from_directory"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from flask import Flask, render_template, request, jsonify, send_from_directory",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "flask_cors",
+        "imported_symbols": [
+            "CORS"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from flask_cors import CORS",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "flask_socketio",
+        "imported_symbols": [
+            "SocketIO",
+            "emit"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from flask_socketio import SocketIO, emit",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "logging",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import logging",
+        "line_number": 14
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "config.settings",
+        "imported_symbols": [
+            "settings"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from config.settings import settings",
+        "line_number": 15
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "core.logging",
+        "imported_symbols": [
+            "configure_logging",
+            "get_logger"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.logging import configure_logging, get_logger",
+        "line_number": 16
+    },
+    {
+        "source_file_path": "web_interface/app.py",
+        "source_module_qualname": "web_interface.app",
+        "imported_module_qualname": "core.engine",
+        "imported_symbols": [
+            "ManusAIEngine"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.engine import ManusAIEngine",
+        "line_number": 21
+    },
+    {
+        "source_file_path": "knowledge/memory_system.py",
+        "source_module_qualname": "knowledge.memory_system",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "knowledge/memory_system.py",
+        "source_module_qualname": "knowledge.memory_system",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "knowledge/memory_system.py",
+        "source_module_qualname": "knowledge.memory_system",
+        "imported_module_qualname": "json",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import json",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "knowledge/knowledge_base.py",
+        "source_module_qualname": "knowledge.knowledge_base",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "knowledge/knowledge_base.py",
+        "source_module_qualname": "knowledge.knowledge_base",
+        "imported_module_qualname": "json",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import json",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "knowledge/__init__.py",
+        "source_module_qualname": "knowledge",
+        "imported_module_qualname": "memory_system",
+        "imported_symbols": [
+            "MemorySystem"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .memory_system import MemorySystem",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "knowledge/__init__.py",
+        "source_module_qualname": "knowledge",
+        "imported_module_qualname": "knowledge_base",
+        "imported_symbols": [
+            "KnowledgeBase"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .knowledge_base import KnowledgeBase",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "planner/pseudocode_generator.py",
+        "source_module_qualname": "planner.pseudocode_generator",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "planner/pseudocode_generator.py",
+        "source_module_qualname": "planner.pseudocode_generator",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "planner/pseudocode_generator.py",
+        "source_module_qualname": "planner.pseudocode_generator",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "planner/pseudocode_generator.py",
+        "source_module_qualname": "planner.pseudocode_generator",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "planner/pseudocode_generator.py",
+        "source_module_qualname": "planner.pseudocode_generator",
+        "imported_module_qualname": "planner.task_planner",
+        "imported_symbols": [
+            "ExecutionPlan",
+            "ExecutionStep",
+            "TaskPriority",
+            "PlanStatus"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from planner.task_planner import ExecutionPlan, ExecutionStep, TaskPriority, PlanStatus",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "planner/task_prioritization.py",
+        "source_module_qualname": "planner.task_prioritization",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "planner/task_prioritization.py",
+        "source_module_qualname": "planner.task_prioritization",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime",
+            "timedelta"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime, timedelta",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "planner/task_prioritization.py",
+        "source_module_qualname": "planner.task_prioritization",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "planner/task_prioritization.py",
+        "source_module_qualname": "planner.task_prioritization",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union",
+            "Callable"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union, Callable",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "planner/task_prioritization.py",
+        "source_module_qualname": "planner.task_prioritization",
+        "imported_module_qualname": "core.event_processor",
+        "imported_symbols": [
+            "EventType"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.event_processor import EventType",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "planner/task_prioritization.py",
+        "source_module_qualname": "planner.task_prioritization",
+        "imported_module_qualname": "planner.task_planner",
+        "imported_symbols": [
+            "TaskPlanner",
+            "ExecutionPlan",
+            "ExecutionStep",
+            "TaskPriority",
+            "PlanStatus"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from planner.task_planner import TaskPlanner, ExecutionPlan, ExecutionStep, TaskPriority, PlanStatus",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "planner/__init__.py",
+        "source_module_qualname": "planner",
+        "imported_module_qualname": "task_planner",
+        "imported_symbols": [
+            "TaskPlanner"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .task_planner import TaskPlanner",
+        "line_number": 2
+    },
+    {
+        "source_file_path": "planner/__init__.py",
+        "source_module_qualname": "planner",
+        "imported_module_qualname": "pseudocode_generator",
+        "imported_symbols": [
+            "PseudocodeGenerator"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .pseudocode_generator import PseudocodeGenerator",
+        "line_number": 3
+    },
+    {
+        "source_file_path": "planner/__init__.py",
+        "source_module_qualname": "planner",
+        "imported_module_qualname": "task_prioritization",
+        "imported_symbols": [
+            "TaskPrioritizer"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .task_prioritization import TaskPrioritizer",
+        "line_number": 4
+    },
+    {
+        "source_file_path": "planner/task_planner.py",
+        "source_module_qualname": "planner.task_planner",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "planner/task_planner.py",
+        "source_module_qualname": "planner.task_planner",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "planner/task_planner.py",
+        "source_module_qualname": "planner.task_planner",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "planner/task_planner.py",
+        "source_module_qualname": "planner.task_planner",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "planner/task_planner.py",
+        "source_module_qualname": "planner.task_planner",
+        "imported_module_qualname": "core.event_processor",
+        "imported_symbols": [
+            "EventType"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.event_processor import EventType",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "security/role_permissions.py",
+        "source_module_qualname": "security.role_permissions",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "security/role_permissions.py",
+        "source_module_qualname": "security.role_permissions",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "security/role_permissions.py",
+        "source_module_qualname": "security.role_permissions",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "security/role_permissions.py",
+        "source_module_qualname": "security.role_permissions",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator",
+            "RolePermissions",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import PermissionValidator, RolePermissions, SecurityContext, PermissionLevel",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "security/permission_validator.py",
+        "source_module_qualname": "security.permission_validator",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "security/permission_validator.py",
+        "source_module_qualname": "security.permission_validator",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "security/permission_validator.py",
+        "source_module_qualname": "security.permission_validator",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "security/permission_validator.py",
+        "source_module_qualname": "security.permission_validator",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "security/permission_validator.py",
+        "source_module_qualname": "security.permission_validator",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import PermissionLevel",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "security/permission_validator.py",
+        "source_module_qualname": "security.permission_validator",
+        "imported_module_qualname": "security.access_rule",
+        "imported_symbols": [
+            "AccessRule"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.access_rule import AccessRule",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "security/security_context.py",
+        "source_module_qualname": "security.security_context",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "security/security_context.py",
+        "source_module_qualname": "security.security_context",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "security/security_context.py",
+        "source_module_qualname": "security.security_context",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "security/security_context.py",
+        "source_module_qualname": "security.security_context",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator",
+            "SecurityContext",
+            "AccessRuleManager"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import PermissionValidator, SecurityContext, AccessRuleManager",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "security/access_rule.py",
+        "source_module_qualname": "security.access_rule",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "security/access_rule.py",
+        "source_module_qualname": "security.access_rule",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "security/access_rule.py",
+        "source_module_qualname": "security.access_rule",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "security/access_rule.py",
+        "source_module_qualname": "security.access_rule",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "security/access_rule.py",
+        "source_module_qualname": "security.access_rule",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import PermissionLevel",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "security/access_rule_manager.py",
+        "source_module_qualname": "security.access_rule_manager",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "security/access_rule_manager.py",
+        "source_module_qualname": "security.access_rule_manager",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "security/access_rule_manager.py",
+        "source_module_qualname": "security.access_rule_manager",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "security/access_rule_manager.py",
+        "source_module_qualname": "security.access_rule_manager",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union",
+            "Callable"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union, Callable",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "security/access_rule_manager.py",
+        "source_module_qualname": "security.access_rule_manager",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import PermissionValidator, SecurityContext, PermissionLevel",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "security/access_rule_manager.py",
+        "source_module_qualname": "security.access_rule_manager",
+        "imported_module_qualname": "security.access_rule",
+        "imported_symbols": [
+            "AccessRule"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.access_rule import AccessRule",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "security/audit_logger.py",
+        "source_module_qualname": "security.audit_logger",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "security/audit_logger.py",
+        "source_module_qualname": "security.audit_logger",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime",
+            "timedelta"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime, timedelta",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "security/audit_logger.py",
+        "source_module_qualname": "security.audit_logger",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union",
+            "Callable"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union, Callable",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "security/audit_logger.py",
+        "source_module_qualname": "security.audit_logger",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "PermissionValidator",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import PermissionValidator, SecurityContext, PermissionLevel",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "security/audit_logger.py",
+        "source_module_qualname": "security.audit_logger",
+        "imported_module_qualname": "security.access_rule_manager",
+        "imported_symbols": [
+            "AccessRuleManager"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.access_rule_manager import AccessRuleManager",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "security/__init__.py",
+        "source_module_qualname": "security",
+        "imported_module_qualname": "permission_validator",
+        "imported_symbols": [
+            "PermissionValidator",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .permission_validator import PermissionValidator, SecurityContext, PermissionLevel",
+        "line_number": 2
+    },
+    {
+        "source_file_path": "security/__init__.py",
+        "source_module_qualname": "security",
+        "imported_module_qualname": "access_rule_manager",
+        "imported_symbols": [
+            "AccessRuleManager"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .access_rule_manager import AccessRuleManager",
+        "line_number": 3
+    },
+    {
+        "source_file_path": "security/__init__.py",
+        "source_module_qualname": "security",
+        "imported_module_qualname": "role_permissions",
+        "imported_symbols": [
+            "RoleManager",
+            "UserRole",
+            "UserPermission"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .role_permissions import RoleManager, UserRole, UserPermission",
+        "line_number": 4
+    },
+    {
+        "source_file_path": "security/__init__.py",
+        "source_module_qualname": "security",
+        "imported_module_qualname": "audit_logger",
+        "imported_symbols": [
+            "AuditLogger",
+            "AuditEvent",
+            "AuditLogEntry"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .audit_logger import AuditLogger, AuditEvent, AuditLogEntry",
+        "line_number": 5
+    },
+    {
+        "source_file_path": "tools/tool_interface.py",
+        "source_module_qualname": "tools.tool_interface",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/tool_interface.py",
+        "source_module_qualname": "tools.tool_interface",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/tool_interface.py",
+        "source_module_qualname": "tools.tool_interface",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "tools/tool_interface.py",
+        "source_module_qualname": "tools.tool_interface",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union",
+            "Callable"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union, Callable",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "tools/tool_interface.py",
+        "source_module_qualname": "tools.tool_interface",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "SecurityException",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import SecurityException, PermissionLevel",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "tools/tool_interface.py",
+        "source_module_qualname": "tools.tool_interface",
+        "imported_module_qualname": "security.permission_validator",
+        "imported_symbols": [
+            "SecurityContext"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from security.permission_validator import SecurityContext",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "asyncio",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import asyncio",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "json",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import json",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "os",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import os",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "subprocess",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import subprocess",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "tempfile",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import tempfile",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "time",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import time",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "pathlib",
+        "imported_symbols": [
+            "Path"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from pathlib import Path",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "requests",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import requests",
+        "line_number": 14
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "glob",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import glob",
+        "line_number": 15
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "re",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import re",
+        "line_number": 16
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter",
+        "line_number": 18
+    },
+    {
+        "source_file_path": "tools/manus_tools.py",
+        "source_module_qualname": "tools.manus_tools",
+        "imported_module_qualname": "core.types",
+        "imported_symbols": [
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.types import PermissionLevel",
+        "line_number": 19
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "re",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import re",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "List",
+            "Optional",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, List, Optional, Union",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "httpx",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import httpx",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "bs4",
+        "imported_symbols": [
+            "BeautifulSoup"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from bs4 import BeautifulSoup",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "core.logging",
+        "imported_symbols": [
+            "get_logger"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.logging import get_logger # Added for logging",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "tools/browser_tool.py",
+        "source_module_qualname": "tools.browser_tool",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter",
+            "ToolType",
+            "ToolMetadata",
+            "ExecutionResult",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter, ToolType, ToolMetadata, ExecutionResult, SecurityContext, PermissionLevel",
+        "line_number": 14
+    },
+    {
+        "source_file_path": "tools/shell_tool.py",
+        "source_module_qualname": "tools.shell_tool",
+        "imported_module_qualname": "re",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import re",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/shell_tool.py",
+        "source_module_qualname": "tools.shell_tool",
+        "imported_module_qualname": "subprocess",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import subprocess  # Added",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/shell_tool.py",
+        "source_module_qualname": "tools.shell_tool",
+        "imported_module_qualname": "shlex",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import shlex     # Added",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "tools/shell_tool.py",
+        "source_module_qualname": "tools.shell_tool",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "Optional",
+            "List",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, Optional, List, Union",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "tools/shell_tool.py",
+        "source_module_qualname": "tools.shell_tool",
+        "imported_module_qualname": "core.logging",
+        "imported_symbols": [
+            "get_logger"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.logging import get_logger # Added for logging",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "tools/shell_tool.py",
+        "source_module_qualname": "tools.shell_tool",
+        "imported_module_qualname": "core.event_processor",
+        "imported_symbols": [
+            "EventType"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.event_processor import EventType",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "tools/shell_tool.py",
+        "source_module_qualname": "tools.shell_tool",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter",
+            "ToolType",
+            "ToolMetadata",
+            "ExecutionResult",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter, ToolType, ToolMetadata, ExecutionResult, SecurityContext, PermissionLevel",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "tools/knowledge_tool.py",
+        "source_module_qualname": "tools.knowledge_tool",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/knowledge_tool.py",
+        "source_module_qualname": "tools.knowledge_tool",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/knowledge_tool.py",
+        "source_module_qualname": "tools.knowledge_tool",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "tools/knowledge_tool.py",
+        "source_module_qualname": "tools.knowledge_tool",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "Optional",
+            "List",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, Optional, List, Union",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "tools/knowledge_tool.py",
+        "source_module_qualname": "tools.knowledge_tool",
+        "imported_module_qualname": "core.logging",
+        "imported_symbols": [
+            "get_logger"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.logging import get_logger # Added for logging",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "tools/knowledge_tool.py",
+        "source_module_qualname": "tools.knowledge_tool",
+        "imported_module_qualname": "knowledge.knowledge_base",
+        "imported_symbols": [
+            "KnowledgeBase"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from knowledge.knowledge_base import KnowledgeBase # Added import",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "tools/knowledge_tool.py",
+        "source_module_qualname": "tools.knowledge_tool",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter",
+            "ToolType",
+            "ToolMetadata",
+            "ExecutionResult",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter, ToolType, ToolMetadata, ExecutionResult, SecurityContext, PermissionLevel",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "tools/message_tool.py",
+        "source_module_qualname": "tools.message_tool",
+        "imported_module_qualname": "re",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import re",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/message_tool.py",
+        "source_module_qualname": "tools.message_tool",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/message_tool.py",
+        "source_module_qualname": "tools.message_tool",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "Optional",
+            "List",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, Optional, List, Union",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "tools/message_tool.py",
+        "source_module_qualname": "tools.message_tool",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "tools/message_tool.py",
+        "source_module_qualname": "tools.message_tool",
+        "imported_module_qualname": "core.logging",
+        "imported_symbols": [
+            "get_logger"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.logging import get_logger # Added for logging",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "tools/message_tool.py",
+        "source_module_qualname": "tools.message_tool",
+        "imported_module_qualname": "core.event_processor",
+        "imported_symbols": [
+            "EventType"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.event_processor import EventType",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "tools/message_tool.py",
+        "source_module_qualname": "tools.message_tool",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter",
+            "ToolType",
+            "ToolMetadata",
+            "ExecutionResult",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter, ToolType, ToolMetadata, ExecutionResult, SecurityContext, PermissionLevel",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "tools/__init__.py",
+        "source_module_qualname": "tools",
+        "imported_module_qualname": "tool_interface",
+        "imported_symbols": [
+            "ToolAdapter"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .tool_interface import ToolAdapter",
+        "line_number": 2
+    },
+    {
+        "source_file_path": "tools/__init__.py",
+        "source_module_qualname": "tools",
+        "imported_module_qualname": "message_tool",
+        "imported_symbols": [
+            "MessageTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .message_tool import MessageTool",
+        "line_number": 3
+    },
+    {
+        "source_file_path": "tools/__init__.py",
+        "source_module_qualname": "tools",
+        "imported_module_qualname": "file_tool",
+        "imported_symbols": [
+            "FileTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .file_tool import FileTool",
+        "line_number": 4
+    },
+    {
+        "source_file_path": "tools/__init__.py",
+        "source_module_qualname": "tools",
+        "imported_module_qualname": "shell_tool",
+        "imported_symbols": [
+            "ShellTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .shell_tool import ShellTool",
+        "line_number": 5
+    },
+    {
+        "source_file_path": "tools/__init__.py",
+        "source_module_qualname": "tools",
+        "imported_module_qualname": "browser_tool",
+        "imported_symbols": [
+            "BrowserTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .browser_tool import BrowserTool",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/__init__.py",
+        "source_module_qualname": "tools",
+        "imported_module_qualname": "knowledge_tool",
+        "imported_symbols": [
+            "KnowledgeTool"
+        ],
+        "import_type": "from_import",
+        "is_relative": true,
+        "relative_level": 1,
+        "original_import_statement": "from .knowledge_tool import KnowledgeTool",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "os",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import os",
+        "line_number": 6
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "re",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import re",
+        "line_number": 7
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "uuid",
+        "imported_symbols": [],
+        "import_type": "direct_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "import uuid",
+        "line_number": 8
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "datetime",
+        "imported_symbols": [
+            "datetime"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from datetime import datetime",
+        "line_number": 9
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "enum",
+        "imported_symbols": [
+            "Enum"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from enum import Enum",
+        "line_number": 10
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "typing",
+        "imported_symbols": [
+            "Dict",
+            "Any",
+            "Optional",
+            "List",
+            "Union"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from typing import Dict, Any, Optional, List, Union",
+        "line_number": 11
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "pathlib",
+        "imported_symbols": [
+            "Path"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from pathlib import Path",
+        "line_number": 12
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "core.logging",
+        "imported_symbols": [
+            "get_logger"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from core.logging import get_logger # Added for logging",
+        "line_number": 13
+    },
+    {
+        "source_file_path": "tools/file_tool.py",
+        "source_module_qualname": "tools.file_tool",
+        "imported_module_qualname": "tools.tool_interface",
+        "imported_symbols": [
+            "ToolAdapter",
+            "ToolType",
+            "ToolMetadata",
+            "ExecutionResult",
+            "SecurityContext",
+            "PermissionLevel"
+        ],
+        "import_type": "from_import",
+        "is_relative": false,
+        "relative_level": 0,
+        "original_import_statement": "from tools.tool_interface import ToolAdapter, ToolType, ToolMetadata, ExecutionResult, SecurityContext, PermissionLevel",
+        "line_number": 15
+    }
+]

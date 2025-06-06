@@ -51,7 +51,46 @@
             margin: 8px 0;
             border-radius: 4px;
         }
-    </style>
+    .logger-panel {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        height: 200px;
+        background: #1f2937;
+        color: #e5e7eb;
+        border-radius: 8px;
+        padding: 12px;
+        overflow-y: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 50;
+    }
+    .logger-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    .logger-toggle {
+        cursor: pointer;
+        color: #9ca3af;
+    }
+    .logger-toggle:hover {
+        color: #e5e7eb;
+    }
+    .log-entry {
+        margin-bottom: 6px;
+        border-bottom: 1px solid #374151;
+        padding-bottom: 6px;
+    }
+    .log-level-DEBUG { color: #9ca3af; }
+    .log-level-INFO { color: #10b981; }
+    .log-level-WARNING { color: #f59e0b; }
+    .log-level-ERROR { color: #ef4444; }
+    .log-level-CRITICAL { color: #be123c; font-weight: bold; }
+</style>
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
@@ -154,6 +193,17 @@
         </div>
     </div>
 
+    <!-- Logger Panel -->
+    <div id="loggerPanel" class="logger-panel">
+        <div class="logger-header">
+            <h3 class="text-sm font-bold">Application Logs</h3>
+            <div class="logger-toggle" id="toggleLogger" title="Toggle Logger Visibility">
+                <i class="fas fa-minus"></i>
+            </div>
+        </div>
+        <div id="logEntries"></div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <script>
@@ -173,9 +223,15 @@
         const workingLanguage = document.getElementById('workingLanguage');
         const currentTask = document.getElementById('currentTask');
         const eventStream = document.getElementById('eventStream');
-
+        const loggerPanel = document.getElementById('loggerPanel');
+        const toggleLogger = document.getElementById('toggleLogger');
+        const logEntries = document.getElementById('logEntries');
+    
         // State
         let isProcessing = false;
+        let isLoggerVisible = true;
+        let logBuffer = [];
+        let logUpdateTimer = null;
 
         // Socket event handlers
         socket.on('connect', function() {
@@ -213,6 +269,10 @@
             isProcessing = false;
             sendButton.disabled = false;
             addSystemMessage('Error: ' + data.error, 'error');
+        });
+    
+        socket.on('log_update', function(data) {
+            addLogEntry(data);
         });
 
         // UI functions
@@ -303,7 +363,7 @@
             addUserMessage(message);
             messageInput.value = '';
             
-            socket.emit('send_message', { message: message });
+            socket.emit('send_message', { message: message, user_id: 'web_user' }); // Added user_id
         }
 
         function clearChatMessages() {
@@ -313,6 +373,44 @@
                     <p>Chat cleared. Start a new conversation!</p>
                 </div>
             `;
+        }
+    
+        function addLogEntry(logData) {
+            logBuffer.push(logData);
+            if (!logUpdateTimer) {
+                logUpdateTimer = setTimeout(updateLogDisplay, 100); // Batch updates every 100ms
+            }
+        }
+    
+        function updateLogDisplay() {
+            if (logBuffer.length === 0) {
+                logUpdateTimer = null;
+                return;
+            }
+    
+            const fragment = document.createDocumentFragment();
+            logBuffer.forEach(logData => {
+                const logDiv = document.createElement('div');
+                logDiv.className = `log-entry log-level-${logData.level}`;
+                logDiv.innerHTML = `<span>[${logData.level}]</span> <span>${escapeHtml(logData.message)}</span>`;
+                fragment.appendChild(logDiv);
+            });
+    
+            logEntries.appendChild(fragment);
+            logBuffer = []; // Clear buffer
+            logEntries.scrollTop = logEntries.scrollHeight; // Auto-scroll to bottom
+            logUpdateTimer = null;
+    
+            // Limit to 100 log entries to prevent performance issues
+            while (logEntries.children.length > 100) {
+                logEntries.removeChild(logEntries.firstChild);
+            }
+        }
+    
+        function toggleLoggerVisibility() {
+            isLoggerVisible = !isLoggerVisible;
+            loggerPanel.style.display = isLoggerVisible ? 'block' : 'none';
+            toggleLogger.innerHTML = `<i class="fas ${isLoggerVisible ? 'fa-minus' : 'fa-plus'}"></i>`;
         }
 
         function scrollToBottom() {
@@ -335,10 +433,12 @@
         });
 
         clearChat.addEventListener('click', clearChatMessages);
-
+        toggleLogger.addEventListener('click', toggleLoggerVisibility);
+    
         // Initialize
         requestStatusUpdate();
         setInterval(requestStatusUpdate, 5000); // Update status every 5 seconds
+        logEntries.innerHTML = '<div class="text-gray-400">Logs will appear here...</div>';
     </script>
 </body>
 </html>

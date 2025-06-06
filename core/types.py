@@ -10,6 +10,7 @@ class AgentState(Enum):
     """Agent lifecycle states"""
     IDLE = "idle"
     PLANNING = "planning"
+    PROCESSING = "processing"
     EXECUTING = "executing"
     WAITING = "waiting"
     ERROR = "error"

@@ -5,9 +5,10 @@ Implements message routing and data transformation
 
 import uuid
 from datetime import datetime
-from typing import Dict, Any, List, Optional, Union, Callable
+from typing import Dict, Any, List, Optional, Union, Callable, TYPE_CHECKING
 
-from system_integration.component_connector import ComponentConnector, DataFlow
+if TYPE_CHECKING:
+    from system_integration.component_connector import ComponentConnector, DataFlow
 from core.types import SecurityException, PermissionLevel
 from security.permission_validator import SecurityContext, PermissionValidator
 
@@ -28,7 +29,7 @@ class MessageRouter:
         # System connector
         self.connector = None  # type: Optional[ComponentConnector]
 
-    def set_connector(self, connector: ComponentConnector) -> None:
+    def set_connector(self, connector: 'ComponentConnector') -> None:
         """
         Set component connector for routing
         

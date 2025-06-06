@@ -9,15 +9,17 @@ import os
 import subprocess
 import tempfile
 import time
-from typing import Dict, Any, List, Optional, Union
+from typing import Dict, Any, List, Optional, Union, TYPE_CHECKING
 from pathlib import Path
 import requests
 import glob
 import re
 
-from tools.tool_interface import ToolAdapter
+# from tools.tool_interface import ToolAdapter # Moved to TYPE_CHECKING
 from core.types import PermissionLevel
 
+if TYPE_CHECKING:
+    from tools.tool_interface import ToolAdapter # Moved here
 
 class ManusToolRegistry:
     """

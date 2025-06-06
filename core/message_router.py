@@ -5,11 +5,14 @@ Implements message routing between components
 
 import uuid
 from datetime import datetime
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, TYPE_CHECKING # Added TYPE_CHECKING
 
 from core.event_processor import EventProcessor
 from security.permission_validator import PermissionValidator, SecurityContext
-from tools.tool_interface import ToolAdapter
+# from tools.tool_interface import ToolAdapter # Moved to TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from tools.tool_interface import ToolAdapter # Moved here
 
 class MessageRouter:
     """
@@ -23,9 +26,9 @@ class MessageRouter:
         self.routes = {}  # type: Dict[str, Dict[str, str]]
         
         # Component references
-        self.event_processor = None  # type: Optional[EventProcessor]
-        self.tool_adapter = None  # type: Optional[ToolAdapter]
-        self.permission_validator = None  # type: Optional[PermissionValidator]
+        self.event_processor = None  # type: Optional[EventProcessor] # Assuming EventProcessor is fine
+        self.tool_adapter = None  # type: Optional['ToolAdapter'] # Changed to string literal
+        self.permission_validator = None  # type: Optional[PermissionValidator] # Assuming PermissionValidator is fine
         
         # Configuration
         self.max_queue_size = 1000
@@ -145,7 +148,7 @@ class MessageRouter:
         """
         self.event_processor = processor
 
-    def set_tool_adapter(self, adapter: ToolAdapter) -> None:
+    def set_tool_adapter(self, adapter: 'ToolAdapter') -> None: # Changed to string literal
         """
         Set tool adapter for message processing
         

@@ -38,17 +38,27 @@ COPY . .
 # Create necessary directories
 RUN mkdir -p /app/data /app/logs /app/temp
 
+# Create a non-root user and group
+RUN groupadd -r appgroup && useradd --no-log-init -r -g appgroup -d /app -s /sbin/nologin appuser
+
+# Change ownership of the app directory
+RUN chown -R appuser:appgroup /app
+RUN mkdir -p /app/sandbox_data && chown -R appuser:appgroup /app/sandbox_data
+
 # Set environment variables
 ENV PYTHONPATH=/app
 ENV FLASK_APP=web_interface/app.py
 ENV FLASK_ENV=production
 
 # Expose ports
-EXPOSE 12000 12001
+EXPOSE 8000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:12000/api/status || exit 1
+    CMD curl -f http://localhost:8000/api/status || exit 1
+
+# Switch to non-root user
+USER appuser
 
 # Start command
 CMD ["python", "web_interface/app.py"]
